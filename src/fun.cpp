@@ -35,12 +35,10 @@ unsigned int faStr2(const char* str) {
         if (std::isspace(*str) && inWord) {
             isValidated = false;
             inWord = false;
-        }
-        else if (!std::islower(*str)) {
+        } else if (!std::islower(*str)) {
             count -= isValidated ? 1 : 0;
             isValidated = false;
-        }
-        else if (!inWord && std::isupper(*str)) {
+        } else if (!inWord && std::isupper(*str)) {
             count++;
             inWord = true;
             isValidated = true;
