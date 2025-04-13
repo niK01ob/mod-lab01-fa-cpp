@@ -42,6 +42,8 @@ unsigned int faStr2(const char* str) {
             count++;
             inWord = true;
             isValidated = true;
+        } else {
+            inWord = true;
         }
         str++;
     }
@@ -55,13 +57,11 @@ unsigned int faStr3(const char* str) {
     while (*str) {
         if (std::isspace(*str) && inWord) {
             inWord = false;
-        }
-        else if (!std::isspace(*str) && !inWord) {
+        } else if (!std::isspace(*str) && !inWord) {
             inWord = true;
             count++;
             lenWords++;
-        }
-        else if (!std::isspace(*str) && inWord) {
+        } else if (!std::isspace(*str) && inWord) {
             lenWords++;
         }
         str++;
